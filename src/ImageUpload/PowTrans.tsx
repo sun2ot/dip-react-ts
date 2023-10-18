@@ -9,6 +9,7 @@ function LogTrans() {
   /* state */
   const [file, setFile] = useState<File | null>(null); //文件选择
   const [input1, setInput1] = useState<string>(""); //输入值1
+  const [input2, setInput2] = useState<string>(""); //输入值2
   const [processedPath, setProcessedPath] = useState<string>(""); //处理后文件url
   const [alertTag, setAlertTag] = useState<AlertProps["state"]>("primary"); //alert类型
   const [alertVisible, setAlertVisibility] = useState<boolean>(false); //alert可见性
@@ -18,14 +19,15 @@ function LogTrans() {
     if (e.target.files && e.target.files.length > 0) {
       setFile(e.target.files[0]);
     }
-    //为什么写在这里会报错？因为file可能为null，因此过不了ts的类型检查
-    //但写在return部分，因为有三元运算符检测，因此可以保证file不为空
-    //const imageUrl = URL.createObjectURL(file)
   }; //选择文件
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //输入的值
+  const handleInput1 = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput1(e.target.value);
-  }; //输入的值
+  };
+  const handleInput2 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput2(e.target.value);
+  };
 
   const handleUpload = async () => {
     if (!file || !input1) {
@@ -34,19 +36,20 @@ function LogTrans() {
       return;
     }
 
+    //传参
     const formData = new FormData();
     let params: Record<string, string | Blob> = {
       image: file,
       c: input1,
-      fid: "3",
+      gamma: input2,
+      fid: "4",
     };
     for (let key in params) {
       if (params.hasOwnProperty(key)) {
-        // formData.append()的第二个参数只能为 string | Blob
         formData.append(key, params[key]);
       }
     }
-    //如果不希望量化参数通过?key=value的形式传递，可以继续formData.append()
+
     try {
       const response = await axios.post(
         "http://localhost:5000/process_image",
@@ -55,9 +58,6 @@ function LogTrans() {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          // params: {
-          //   levels: selectedLevel, // 将选择的量化等级作为参数发送到后端
-          // },
         }
       );
       console.log("Upload successfully", response.data);
@@ -76,7 +76,6 @@ function LogTrans() {
       <div className={styles.leftArea}>
         <h4>对数变换</h4>
         <div className="mb-3">
-          {/* <label htmlFor="formFile" className="form-label" /> */}
           <input
             className="form-control"
             type="file"
@@ -97,7 +96,8 @@ function LogTrans() {
       <div className={styles.rightArea}>
         <h4>参数</h4>
         <div className={styles.menu}>
-          <Input tips="请输入c值" onInput={handleInput} />
+          <Input tips="请输入c值" onInput={handleInput1} /> <br />
+          <Input tips="请输入gamma值" onInput={handleInput2} />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Button children="上传" onClick={handleUpload} />
         </div>

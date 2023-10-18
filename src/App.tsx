@@ -8,6 +8,7 @@ import Grayscale from "./ImageUpload/Grayscale";
 import LogTrans from "./ImageUpload/LogTrans";
 import Menu from "./Menu";
 import Reverse from "./ImageUpload/Reverse";
+import PowTrans from "./ImageUpload/PowTrans";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/gray" element={<Grayscale />} />
         <Route path="/reverse" element={<Reverse />} />
         <Route path="/log" element={<LogTrans />} />
+        <Route path="/pow" element={<PowTrans />} />
       </Routes>
     </>
   );
