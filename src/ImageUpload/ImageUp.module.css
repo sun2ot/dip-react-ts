@@ -1,0 +1,41 @@
+/* 左右分割布局样式 */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 5px;
+  /* border: black solid 2px; */
+}
+
+.alertContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* 确保 Alert 在其他元素之上 */
+}
+
+/* 左侧区域样式 */
+.leftArea {
+  flex: 1;
+  padding: 20px;
+  border-right: 2px solid #ccc;
+}
+
+/* 右侧区域样式 */
+.rightArea {
+  flex: 1;
+  padding: 20px;
+}
+
+/* 图片预览样式 */
+.imagePreview {
+  margin-top: 20px;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.menu {
+  display: flex;
+  align-items: center; /* 控制垂直居中对齐 */
+  margin-bottom: 12px;
+}
