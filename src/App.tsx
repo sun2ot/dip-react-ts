@@ -12,6 +12,7 @@ import PowTrans from "./ImageUpload/PowTrans";
 import Contrast from "./ImageUpload/Contrast";
 import GraySlice from "./ImageUpload/GraySlice";
 import BitPlaneSlice from "./ImageUpload/BitPlaneSlice";
+import ImgCal1 from "./ImageUpload/ImgCal1";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/con" element={<Contrast />} />
         <Route path="/gs" element={<GraySlice />} />
         <Route path="/bps" element={<BitPlaneSlice />} />
+        <Route path="/cal1" element={<ImgCal1 />} />
       </Routes>
     </>
   );

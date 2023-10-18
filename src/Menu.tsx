@@ -9,6 +9,8 @@ const Menu = () => {
       <Jump path="/pow">幂次变换</Jump>
       <Jump path="/con">对比度拉伸</Jump>
       <Jump path="/gs">灰度级切片</Jump>
+      <Jump path="/bps">位平面切片</Jump>
+      <Jump path="/cal1">代数运算</Jump>
     </div>
   );
 };

@@ -5,9 +5,9 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import styles from "./ImageUp.module.css";
 
-function BitPlaneSlice() {
+function ImgCal1() {
   /* state */
-  const [file, setFile] = useState<File | null>(null); //文件选择
+  const [files, setFiles] = useState<FileList | null>(null); //多文件选择
   const [input1, setInput1] = useState<string>(""); //输入值1
   const [processedPath, setProcessedPath] = useState<string>(""); //处理后文件url
   const [alertTag, setAlertTag] = useState<AlertProps["state"]>("primary"); //alert类型
@@ -15,12 +15,9 @@ function BitPlaneSlice() {
 
   /* handle function */
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0]);
+    if (e.target.files && e.target.files.length == 2) {
+      setFiles(e.target.files);
     }
-    //为什么写在这里会报错？因为file可能为null，因此过不了ts的类型检查
-    //但写在return部分，因为有三元运算符检测，因此可以保证file不为空
-    //const imageUrl = URL.createObjectURL(file)
   }; //选择文件
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +25,7 @@ function BitPlaneSlice() {
   }; //输入的值
 
   const handleUpload = async () => {
-    if (!file || !input1) {
+    if (!files || !input1) {
       setAlertTag("warning");
       setAlertVisibility(true);
       return;
@@ -36,17 +33,17 @@ function BitPlaneSlice() {
 
     const formData = new FormData();
     let params: Record<string, string | Blob> = {
-      image: file,
-      bit: input1,
-      fid: "7",
+      image: files[0],
+      image2: files[1],
+      op: input1,
+      fid: "8",
     };
     for (let key in params) {
       if (params.hasOwnProperty(key)) {
-        // formData.append()的第二个参数只能为 string | Blob
         formData.append(key, params[key]);
       }
     }
-    //如果不希望量化参数通过?key=value的形式传递，可以继续formData.append()
+
     try {
       const response = await axios.post(
         "http://localhost:5000/process_image",
@@ -55,9 +52,6 @@ function BitPlaneSlice() {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          // params: {
-          //   levels: selectedLevel, // 将选择的量化等级作为参数发送到后端
-          // },
         }
       );
       console.log("Upload successfully", response.data);
@@ -76,20 +70,28 @@ function BitPlaneSlice() {
       <div className={styles.leftArea}>
         <h4>位平面切片</h4>
         <div className="mb-3">
-          {/* <label htmlFor="formFile" className="form-label" /> */}
+          {/* 上传多上图片 */}
           <input
             className="form-control"
             type="file"
+            multiple
             onChange={handleFileChange}
           />
         </div>
 
-        {file ? (
-          <img
-            src={URL.createObjectURL(file)}
-            alt="File"
-            className={styles.imagePreview}
-          />
+        {files ? (
+          <div>
+            <img
+              src={URL.createObjectURL(files[0])}
+              alt="File"
+              className={styles.imagePreview}
+            />
+            <img
+              src={URL.createObjectURL(files[1])}
+              alt="File"
+              className={styles.imagePreview}
+            />
+          </div>
         ) : null}
       </div>
 
@@ -97,7 +99,10 @@ function BitPlaneSlice() {
       <div className={styles.rightArea}>
         <h4>参数</h4>
         <div className={styles.menu}>
-          <Input tips="请输入切片位值(0-7)" onInput={handleInput} />
+          <Input
+            tips="请输入操作符(仅支持 'add', 'subtract', 'multiply' and 'divide')"
+            onInput={handleInput}
+          />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Button children="上传" onClick={handleUpload} />
         </div>
@@ -120,4 +125,4 @@ function BitPlaneSlice() {
   );
 }
 
-export default BitPlaneSlice;
+export default ImgCal1;
