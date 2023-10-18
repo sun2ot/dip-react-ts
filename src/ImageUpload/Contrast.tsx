@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import styles from "./ImageUp.module.css";
 
-function LogTrans() {
+function Contrast() {
   /* state */
   const [file, setFile] = useState<File | null>(null); //文件选择
   const [input1, setInput1] = useState<string>(""); //输入值1
@@ -74,7 +74,7 @@ function LogTrans() {
     <div className={styles.container}>
       {/* 左侧区域 */}
       <div className={styles.leftArea}>
-        <h4>对数变换</h4>
+        <h4>对比度拉伸</h4>
         <div className="mb-3">
           <input
             className="form-control"
@@ -121,4 +121,4 @@ function LogTrans() {
   );
 }
 
-export default LogTrans;
+export default Contrast;

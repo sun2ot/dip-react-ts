@@ -60,7 +60,7 @@ function Reverse() {
     <div className={styles.container}>
       {/* 左侧区域 */}
       <div className={styles.leftArea}>
-        <h4>对数变换</h4>
+        <h4>反转变换</h4>
         <div className="mb-3">
           {/* <label htmlFor="formFile" className="form-label" /> */}
           <input

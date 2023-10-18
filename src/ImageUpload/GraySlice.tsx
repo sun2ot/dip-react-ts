@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import styles from "./ImageUp.module.css";
 
-function PowTrans() {
+function GraySlice() {
   /* state */
   const [file, setFile] = useState<File | null>(null); //文件选择
   const [input1, setInput1] = useState<string>(""); //输入值1
@@ -40,9 +40,9 @@ function PowTrans() {
     const formData = new FormData();
     let params: Record<string, string | Blob> = {
       image: file,
-      c: input1,
-      gamma: input2,
-      fid: "4",
+      min: input1,
+      max: input2,
+      fid: "6",
     };
     for (let key in params) {
       if (params.hasOwnProperty(key)) {
@@ -74,7 +74,7 @@ function PowTrans() {
     <div className={styles.container}>
       {/* 左侧区域 */}
       <div className={styles.leftArea}>
-        <h4>幂次变换</h4>
+        <h4>灰度级切片</h4>
         <div className="mb-3">
           <input
             className="form-control"
@@ -96,8 +96,9 @@ function PowTrans() {
       <div className={styles.rightArea}>
         <h4>参数</h4>
         <div className={styles.menu}>
-          <Input tips="请输入c值" onInput={handleInput1} /> <br />
-          <Input tips="请输入gamma值" onInput={handleInput2} />
+          <Input tips="请输入切片的最小像素(整数)" onInput={handleInput1} />
+          <br />
+          <Input tips="请输入切片的最大像素(整数)" onInput={handleInput2} />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Button children="上传" onClick={handleUpload} />
         </div>
@@ -120,4 +121,4 @@ function PowTrans() {
   );
 }
 
-export default PowTrans;
+export default GraySlice;

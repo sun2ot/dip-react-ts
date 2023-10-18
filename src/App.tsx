@@ -10,6 +10,8 @@ import Menu from "./Menu";
 import Reverse from "./ImageUpload/Reverse";
 import PowTrans from "./ImageUpload/PowTrans";
 import Contrast from "./ImageUpload/Contrast";
+import GraySlice from "./ImageUpload/GraySlice";
+import BitPlaneSlice from "./ImageUpload/BitPlaneSlice";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/log" element={<LogTrans />} />
         <Route path="/pow" element={<PowTrans />} />
         <Route path="/con" element={<Contrast />} />
+        <Route path="/gs" element={<GraySlice />} />
+        <Route path="/bps" element={<BitPlaneSlice />} />
       </Routes>
     </>
   );
