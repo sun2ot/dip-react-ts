@@ -10,7 +10,9 @@ const Menu = () => {
       <Jump path="/con">对比度拉伸</Jump>
       <Jump path="/gs">灰度级切片</Jump>
       <Jump path="/bps">位平面切片</Jump>
-      <Jump path="/cal1">代数运算</Jump>
+      <Jump path="/cal1">加减乘除</Jump>
+      <Jump path="/cal2">非运算</Jump>
+      <Jump path="/cal3">与、或、异或运算</Jump>
     </div>
   );
 };

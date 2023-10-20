@@ -1,15 +1,21 @@
+/**
+ * Model0：模板组件，需0个输入参数的组件
+ */
+
 import React, { useState } from "react";
 import axios from "axios";
 import Alert, { AlertProps, alertWord } from "../Alert/Alert";
 import Button from "../Button/Button";
-import Input from "../Input/Input";
 import styles from "./ImageUp.module.css";
 
-function GraySlice() {
+interface props {
+  head: string;
+  id: string;
+}
+
+function Model0({ head, id }: props) {
   /* state */
   const [file, setFile] = useState<File | null>(null); //文件选择
-  const [input1, setInput1] = useState<string>(""); //输入值1
-  const [input2, setInput2] = useState<string>(""); //输入值2
   const [processedPath, setProcessedPath] = useState<string>(""); //处理后文件url
   const [alertTag, setAlertTag] = useState<AlertProps["state"]>("primary"); //alert类型
   const [alertVisible, setAlertVisibility] = useState<boolean>(false); //alert可见性
@@ -21,28 +27,17 @@ function GraySlice() {
     }
   }; //选择文件
 
-  //输入的值
-  const handleInput1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput1(e.target.value);
-  };
-  const handleInput2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput2(e.target.value);
-  };
-
   const handleUpload = async () => {
-    if (!file || !input1) {
+    if (!file) {
       setAlertTag("warning");
       setAlertVisibility(true);
       return;
     }
 
-    //传参
     const formData = new FormData();
     let params: Record<string, string | Blob> = {
       image: file,
-      min: input1,
-      max: input2,
-      fid: "6",
+      fid: id,
     };
     for (let key in params) {
       if (params.hasOwnProperty(key)) {
@@ -74,8 +69,9 @@ function GraySlice() {
     <div className={styles.container}>
       {/* 左侧区域 */}
       <div className={styles.leftArea}>
-        <h4>灰度级切片</h4>
+        <h4>{head}</h4>
         <div className="mb-3">
+          {/* <label htmlFor="formFile" className="form-label" /> */}
           <input
             className="form-control"
             type="file"
@@ -94,12 +90,8 @@ function GraySlice() {
 
       {/* 右侧区域 */}
       <div className={styles.rightArea}>
-        <h4>参数</h4>
+        <h4>操作</h4>
         <div className={styles.menu}>
-          <Input tips="请输入切片的最小像素(整数)" onInput={handleInput1} />
-          <br />
-          <Input tips="请输入切片的最大像素(整数)" onInput={handleInput2} />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Button children="上传" onClick={handleUpload} />
         </div>
         {processedPath ? (
@@ -121,4 +113,4 @@ function GraySlice() {
   );
 }
 
-export default GraySlice;
+export default Model0;
