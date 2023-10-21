@@ -13,6 +13,10 @@ const Menu = () => {
       <Jump path="/cal1">加减乘除</Jump>
       <Jump path="/cal2">非运算</Jump>
       <Jump path="/cal3">与、或、异或运算</Jump>
+      <Jump path="/heq">直方图均衡化</Jump>
+      <Jump path="/lsf">线性平滑滤波器</Jump>
+      <Jump path="/msf">中值滤波器</Jump>
+      <Jump path="/sf">锐化滤波器</Jump>
     </div>
   );
 };
