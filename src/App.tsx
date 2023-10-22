@@ -88,6 +88,37 @@ function App() {
           path="/sf"
           element={<Model1 head={text[14].head} tips={text[14].tips} id="14" />}
         />
+        <Route
+          path="/rgb2cmy"
+          element={<Model0 head={text[15].head} id="15" />}
+        />
+        <Route
+          path="/rgb2hsi"
+          element={<Model0 head={text[16].head} id="16" />}
+        />
+        <Route
+          path="/rgb2yuv"
+          element={<Model0 head={text[17].head} id="17" />}
+        />
+        <Route
+          path="/rgb2ycbcr"
+          element={<Model0 head={text[18].head} id="18" />}
+        />
+        <Route
+          path="/rgbcom"
+          element={<Model0 head={text[19].head} id="19" />}
+        />
+        <Route
+          path="/lgt"
+          element={
+            <Model2
+              head={text[20].head}
+              tip1={text[20].tip1}
+              tip2={text[20].tip2}
+              id="20"
+            />
+          }
+        />
       </Routes>
     </>
   );

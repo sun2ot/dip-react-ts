@@ -51,6 +51,26 @@ const text = {
     head: "锐化滤波器",
     tips: "请输入微分阶数(仅支持一/二阶)",
   },
+  15: {
+    head: "RGB转CMY",
+  },
+  16: {
+    head: "RGB转HSI",
+  },
+  17: {
+    head: "RGB转YUV",
+  },
+  18: {
+    head: "RGB转YCbCr",
+  },
+  19: {
+    head: "RGB补色",
+  },
+  20: {
+    head: "线性灰度变换",
+    tip1: "请输入缩放因子α",
+    tip2: "请输入平移因子β",
+  },
 };
 
 export default text;
