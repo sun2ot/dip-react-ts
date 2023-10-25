@@ -119,6 +119,8 @@ function App() {
             />
           }
         />
+        <Route path="/ft" element={<Model0 head={text[21].head} id="21" />} />
+        <Route path="/ftt" element={<Model0 head={text[22].head} id="22" />} />
       </Routes>
     </>
   );

@@ -71,6 +71,12 @@ const text = {
     tip1: "请输入缩放因子α",
     tip2: "请输入平移因子β",
   },
+  21: {
+    head: "傅里叶变换(巨tm慢，慎用)",
+  },
+  22: {
+    head: "快速傅里叶变换",
+  },
 };
 
 export default text;

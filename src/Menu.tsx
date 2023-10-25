@@ -24,6 +24,8 @@ const Menu = () => {
       <Jump path="/rgb2ycbcr">{text[18].head}</Jump>
       <Jump path="/rgbcom">{text[19].head}</Jump>
       <Jump path="/lgt">{text[20].head}</Jump>
+      <Jump path="/ft">{text[21].head}</Jump>
+      <Jump path="/ftt">{text[22].head}</Jump>
     </div>
   );
 };
