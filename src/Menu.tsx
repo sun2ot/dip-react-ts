@@ -26,6 +26,10 @@ const Menu = () => {
       <Jump path="/lgt">{text[20].head}</Jump>
       <Jump path="/ft">{text[21].head}</Jump>
       <Jump path="/ftt">{text[22].head}</Jump>
+      <Jump path="/ilf">{text[23].head}</Jump>
+      <Jump path="/blf">{text[24].head}</Jump>
+      <Jump path="/ihf">{text[25].head}</Jump>
+      <Jump path="/lf">{text[26].head}</Jump>
     </div>
   );
 };

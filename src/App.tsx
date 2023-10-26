@@ -121,6 +121,26 @@ function App() {
         />
         <Route path="/ft" element={<Model0 head={text[21].head} id="21" />} />
         <Route path="/ftt" element={<Model0 head={text[22].head} id="22" />} />
+        <Route
+          path="/ilf"
+          element={<Model1 head={text[23].head} tips={text[23].tips} id="23" />}
+        />
+        <Route
+          path="/blf"
+          element={
+            <Model2
+              head={text[24].head}
+              tip1={text[24].tip1}
+              tip2={text[24].tip2}
+              id="24"
+            />
+          }
+        />
+        <Route
+          path="/ihf"
+          element={<Model1 head={text[25].head} tips={text[25].tips} id="25" />}
+        />
+        <Route path="/lf" element={<Model0 head={text[26].head} id="26" />} />
       </Routes>
     </>
   );
