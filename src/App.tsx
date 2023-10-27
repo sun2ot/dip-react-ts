@@ -140,7 +140,17 @@ function App() {
           path="/ihf"
           element={<Model1 head={text[25].head} tips={text[25].tips} id="25" />}
         />
-        <Route path="/lf" element={<Model0 head={text[26].head} id="26" />} />
+        <Route
+          path="/bhf"
+          element={
+            <Model2
+              head={text[26].head}
+              tip1={text[26].tip1}
+              tip2={text[26].tip1}
+              id="26"
+            />
+          }
+        />
       </Routes>
     </>
   );
