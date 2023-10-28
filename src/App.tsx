@@ -146,8 +146,94 @@ function App() {
             <Model2
               head={text[26].head}
               tip1={text[26].tip1}
-              tip2={text[26].tip1}
+              tip2={text[26].tip2}
               id="26"
+            />
+          }
+        />
+        <Route
+          path="/agn"
+          element={
+            <Model2
+              head={text[27].head}
+              tip1={text[27].tip1}
+              tip2={text[27].tip2}
+              id="27"
+            />
+          }
+        />
+        <Route
+          path="/aspn"
+          element={
+            <Model2
+              head={text[28].head}
+              tip1={text[28].tip1}
+              tip2={text[28].tip2}
+              id="28"
+            />
+          }
+        />
+        <Route
+          path="/aun"
+          element={<Model1 head={text[29].head} tips={text[29].tips} id="29" />}
+        />
+        <Route
+          path="/amf"
+          element={<Model1 head={text[30].head} tips={text[30].tips} id="30" />}
+        />
+        <Route
+          path="/mf"
+          element={<Model1 head={text[31].head} tips={text[31].tips} id="31" />}
+        />
+        <Route
+          path="/gf"
+          element={
+            <Model2
+              head={text[32].head}
+              tip1={text[32].tip1}
+              tip2={text[32].tip2}
+              id="32"
+            />
+          }
+        />
+        <Route
+          path="/maxf"
+          element={<Model1 head={text[33].head} tips={text[33].tips} id="33" />}
+        />
+        <Route
+          path="/minf"
+          element={<Model1 head={text[34].head} tips={text[34].tips} id="34" />}
+        />
+        <Route
+          path="/bsf"
+          element={
+            <Model2
+              head={text[35].head}
+              tip1={text[35].tip1}
+              tip2={text[35].tip2}
+              id="35"
+            />
+          }
+        />
+        <Route
+          path="/bpf"
+          element={
+            <Model2
+              head={text[36].head}
+              tip1={text[36].tip1}
+              tip2={text[36].tip2}
+              id="36"
+            />
+          }
+        />
+        <Route
+          path="/nf"
+          element={
+            <Model2
+              head={text[37].head}
+              tip1={text[37].tip1}
+              tip2={text[37].tip2}
+              id="37"
             />
           }
         />

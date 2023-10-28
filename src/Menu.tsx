@@ -30,6 +30,17 @@ const Menu = () => {
       <Jump path="/blf">{text[24].head}</Jump>
       <Jump path="/ihf">{text[25].head}</Jump>
       <Jump path="/bhf">{text[26].head}</Jump>
+      <Jump path="/agn">{text[27].head}</Jump>
+      <Jump path="/aspn">{text[28].head}</Jump>
+      <Jump path="/aun">{text[29].head}</Jump>
+      <Jump path="/amf">{text[30].head}</Jump>
+      <Jump path="/mf">{text[31].head}</Jump>
+      <Jump path="/gf">{text[32].head}</Jump>
+      <Jump path="/maxf">{text[33].head}</Jump>
+      <Jump path="/minf">{text[34].head}</Jump>
+      <Jump path="/bsf">{text[35].head}</Jump>
+      <Jump path="/bpf">{text[36].head}</Jump>
+      <Jump path="/nf">{text[37].head}</Jump>
     </div>
   );
 };
