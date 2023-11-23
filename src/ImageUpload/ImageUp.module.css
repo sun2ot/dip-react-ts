@@ -39,3 +39,9 @@
   /* align-items: center; 控制垂直居中对齐 */
   margin-bottom: 12px;
 }
+
+.limitedText {
+  max-width: 200px;    /* 设置最大宽度，适应需要的行数和字数 */
+  overflow-wrap: break-word; /* 在单词内允许换行 */
+  word-wrap: break-word; /* 兼容老版本浏览器 */
+}

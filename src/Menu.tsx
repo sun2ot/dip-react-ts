@@ -41,6 +41,26 @@ const Menu = () => {
       <Jump path="/bsf">{text[35].head}</Jump>
       <Jump path="/bpf">{text[36].head}</Jump>
       <Jump path="/nf">{text[37].head}</Jump>
+      <Jump path="/38">{text[38].head}</Jump>
+      <Jump path="/39">{text[39].head}</Jump>
+      <Jump path="/40">{text[40].head}</Jump>
+      <Jump path="/41">{text[41].head}</Jump>
+      <Jump path="/42">{text[42].head}</Jump>
+      <Jump path="/43">{text[43].head}</Jump>
+      <Jump path="/44">{text[44].head}</Jump>
+      <Jump path="/45">{text[45].head}</Jump>
+      <Jump path="/46">{text[46].head}</Jump>
+      <Jump path="/47">{text[47].head}</Jump>
+      <Jump path="/48">{text[48].head}</Jump>
+      <Jump path="/49">{text[49].head}</Jump>
+      <Jump path="/50">{text[50].head}</Jump>
+      <Jump path="/51">{text[51].head}</Jump>
+      <Jump path="/52">{text[52].head}</Jump>
+      <Jump path="/53">{text[53].head}</Jump>
+      <Jump path="/54">{text[54].head}</Jump>
+      <Jump path="/55">{text[55].head}</Jump>
+      <Jump path="/56">{text[56].head}</Jump>
+      <Jump path="/57">{text[57].head}</Jump>
     </div>
   );
 };
