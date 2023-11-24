@@ -6,17 +6,17 @@ interface ButtonProps {
   path: string;
 }
 
-const Button = ({ children, path }: ButtonProps) => {
+const Jump = ({ children, path }: ButtonProps) => {
   const navigate = useNavigate();
   const jump = () => {
     navigate(path);
   };
 
   return (
-    <button type="button" className={styles.lineSpace} onClick={jump}>
+    <button type="button" className={styles.btn} onClick={jump}>
       {children}
     </button>
   );
 };
 
-export default Button;
+export default Jump;
