@@ -10,6 +10,8 @@ This is a homework for North Minzu University's Digital Image Process(DIP) class
 
 # run dev
 
+> 防呆不防傻，请执行下述指令时，保证计算机具有 Nodejs 环境
+
 ```
 cd dip-react-ts
 npm i
